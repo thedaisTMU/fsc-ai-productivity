@@ -35,7 +35,7 @@ results <- att_gt(
 summary_results <- summary(results)
 print(summary_results)
 
-# # Plot results using ggdid
-# ggdid(results)
+# Plot results using ggdid
+ggdid(results)
 
 write.csv(data,'C:/Users/graham.dobbs/OneDrive - Toronto Metropolitan University (RU)/Documents/GitHub/fsc-ai-productivity/synthetic_brm_data.csv')
