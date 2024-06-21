@@ -86,6 +86,8 @@ data <- data.table(
   CCPC = sample(c(0, 1), num_records, replace = TRUE)
 )
 
+######### test run DiD with synthetic data
+
 # assign half of sample to treatment group
 data[, treat := ifelse(Entid %% 2 == 1, 1, 0)]
 
@@ -114,5 +116,15 @@ print(summary_results)
 # Plot results using ggdid
 ggdid(results)
 
+######################## creating treat and first_treat with real data
 
+# extract year variable
+data[, time := as.integer(format(as.Date(FiscalEndDate), "%Y"))]
 
+#merge sdtiu_19 and sdtiu_21 to BR data
+
+# treatment group for businesses which answered "yes" to using AI technologies in sdtiu_19 or sdtiu_21
+data[, treat := ifelse(AI_19 == 1 | AI_21 == 1, 1, 0), by = Entid]
+
+# first treatment year assignment to treatment group
+data[, first_treat:= ifelse(AI_19 == 1, "2019",ifelse(AI_21, "2021",0)),by = Entid]
