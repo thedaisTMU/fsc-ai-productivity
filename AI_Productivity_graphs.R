@@ -2,13 +2,8 @@ setwd("C:/Users/vv.li/Desktop/FSC AI")
 rm(list=ls())
 library(tidyverse)
 library(data.table)
-library(stringr)
-library(scales)
 library(ggplot2)
 library(DaisTheme)
-library(spatstat)
-library(aws.s3)
-library(plyr)
 library(readr)
 
 TFP_adoption <- read_csv("Productivity/TFP_adoption.csv")
@@ -35,7 +30,7 @@ fig_1 <- ggplot(TFP_adoption, aes(x = financial_year, y = mean_tfp, group =C3200
                plot.title = element_text(size = 16),
                plot.subtitle = element_text(size = 14)) 
 
-TFPG_adoption <- read_csv("Productivity/TFPG_adoption")
+TFPG_adoption <- read_csv("Productivity/TFPG_adoption.csv")
 TFPG_adoption <- as.data.table(TFPG_adoption)
 TFPG_adoption$financial_year <- as.integer(TFPG_adoption$financial_year)
 TFPG_adoption$C320010 <- as.character(TFPG_adoption$C320010)
