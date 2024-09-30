@@ -6,7 +6,9 @@ library(DaisTheme)
 library(readr)
 
 TFP_adoption <- read_csv("C:/Users/alockhart/Desktop/did_results.csv")
+TFP_adoption$Treatment <- factor(TFP_adoption$Treatment, levels=c("Before", "After"))
 TFP_adoption <- as.data.table(TFP_adoption)
+
 
 
 fig_4 <- ggplot(TFP_adoption, aes(x = Year, y = `Difference in Productivity Growth`, group=1)) +
