@@ -1,7 +1,7 @@
-﻿Year,Difference in Productivity Growth,Treatment
-2017,0.517,Before
-2018,-0.0956,Before
-2019,-0.3436,Before
-2020,0.6377,After
-2021,-0.5108,After
-2022,-0.3646,After
+﻿Year,Difference in Productivity Growth,Treatment,Minimum,Maximum
+2017,0.517,Before,0.2185,0.8155
+2018,-0.0956,Before,-1.3168,1.1257
+2019,-0.3436,Before,-1.2239,0.5367
+2020,0.6377,After,0.163,1.1125
+2021,-0.5108,After,-0.6444,-0.3771
+2022,-0.3646,After,-0.5903,-0.1389
